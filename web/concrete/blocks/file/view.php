@@ -7,9 +7,9 @@
 			$cID = $c->getCollectionID();
 		}
 ?>
-<a href="<?= View::url('/download_file', $controller->getFileID(),$cID) ?>"><?= stripslashes($controller->getLinkText()) ?></a>
+<a href="<?php echo View::url('/download_file', $controller->getFileID(),$cID) ?>"><?php echo stripslashes($controller->getLinkText()) ?></a>
  
-<?
+<?php
 }
 /*
 $fo = $this->controller->getFileObject();?>

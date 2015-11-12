@@ -1,4 +1,4 @@
-<?
+<?php
 
 defined('C5_EXECUTE') or die("Access Denied.");
 
@@ -2037,7 +2037,7 @@ class Concrete5_Model_Page extends Collection {
 		$pc = Page::getByID($cID, 'RECENT');
 		return $pc;
 	}
-	
+
 	/**
 	* Adds a new page of a certain type, using a passed associate array to setup value. $data may contain any or all of the following:
 	* "uID": User ID of the page's owner
