@@ -86,7 +86,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 			$this->set('controller', $this);
 		}
 		
-		public function post($field = false) {
+		public function post($field = false, $defaultValue = NULL) {
 			// the only post that matters is the one for this attribute's name space
 			$req = ($this->requestArray == false) ? $_POST : $this->requestArray;
 			if (is_object($this->attributeKey) && is_array($req['akID'])) {
@@ -99,7 +99,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 			return parent::post($field);
 		}
 
-		public function request($field = false) {
+		public function request($field = false, $defaultValue = NULL) {
 			$req = ($this->requestArray == false) ? $_REQUEST : $this->requestArray;
 			
 			if (is_object($this->attributeKey) && is_array($req['akID'])) {
@@ -122,7 +122,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 			return $this->searchIndexFieldDefinition;
 		}
 		
-		public function setupAndRun($method) {
+		public function setupAndRun($method = false) {
 			$args = func_get_args();
 			$args = array_slice($args, 1);
 			if ($method) {
@@ -144,11 +144,11 @@ defined('C5_EXECUTE') or die("Access Denied.");
 			}
 		}
 
-		public function saveKey() {
+		public function saveKey($data) {
 		
 		}
 		
-		public function duplicateKey() {
+		public function duplicateKey($newAK) {
 		
 		}
 		

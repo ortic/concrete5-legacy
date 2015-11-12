@@ -37,7 +37,7 @@ class Concrete5_Model_AttributeType extends Object {
 		unset($this->controller);
 	}
 	
-	public static function getList($akCategoryHandle = false) {
+	public static function getListBase($akCategoryHandle = false) {
 		$db = Loader::db();
 		$list = array();
 		if ($akCategoryHandle == false) {
@@ -54,7 +54,7 @@ class Concrete5_Model_AttributeType extends Object {
 	}
 	
 	public static function exportList($xml) {
-		$attribs = AttributeType::getList();
+		$attribs = AttributeType::getListBase();
 		$db = Loader::db();
 		$axml = $xml->addChild('attributetypes');
 		foreach($attribs as $at) {

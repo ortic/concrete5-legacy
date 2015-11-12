@@ -78,7 +78,7 @@ class Concrete5_Controller_AttributeType_Select extends AttributeTypeController 
 		return $akey;
 	}
 
-	public function exportValue($akn) {
+	public function exportValue(SimpleXMLElement $akn) {
 		$list = $this->getSelectedOptions();
 		if ($list->count() > 0) {
 			$av = $akn->addChild('value');

@@ -229,7 +229,7 @@ class Concrete5_Library_Controller {
 	 * The requested method is then run on the active controller (if that method exists)
 	 * @return void
 	 */	
-	public function setupAndRun() {
+	public function setupAndRun($method = false) {
 		$this->setupRequestTask();
 		$this->on_start();
 		

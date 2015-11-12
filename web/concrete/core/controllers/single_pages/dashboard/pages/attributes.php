@@ -6,7 +6,7 @@ class Concrete5_Controller_Dashboard_Pages_Attributes extends Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$otypes = AttributeType::getList('collection');
+		$otypes = AttributeType::getListBase('collection');
 		$types = array();
 		foreach($otypes as $at) {
 			$types[$at->getAttributeTypeID()] = $at->getAttributeTypeDisplayName();

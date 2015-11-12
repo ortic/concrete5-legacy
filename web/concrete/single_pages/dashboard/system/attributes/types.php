@@ -1,6 +1,6 @@
 <?php defined('C5_EXECUTE') or die("Access Denied.");
 
-$types = AttributeType::getList();
+$types = AttributeType::getListBase();
 $categories = AttributeKeyCategory::getList();
 $txt = Loader::helper('text');
 $form = Loader::helper('form');
