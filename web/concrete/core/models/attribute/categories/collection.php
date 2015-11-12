@@ -48,14 +48,14 @@ class Concrete5_Model_CollectionAttributeKey extends AttributeKey {
 	}
 
 	public static function getColumnHeaderList() {
-		return parent::getList('collection', array('akIsColumnHeader' => 1));	
+		return parent::getBaseList('collection', array('akIsColumnHeader' => 1));
 	}
 	public static function getSearchableIndexedList() {
-		return parent::getList('collection', array('akIsSearchableIndexed' => 1));	
+		return parent::getBaseList('collection', array('akIsSearchableIndexed' => 1));
 	}
 
 	public static function getSearchableList() {
-		return parent::getList('collection', array('akIsSearchable' => 1));	
+		return parent::getBaseList('collection', array('akIsSearchable' => 1));
 	}
 
 	public function getAttributeValue($avID, $method = 'getValue') {
@@ -101,7 +101,7 @@ class Concrete5_Model_CollectionAttributeKey extends AttributeKey {
 	}
 	
 	public static function getList() {
-		return parent::getList('collection');	
+		return parent::getBaseList('collection');
 	}
 	
 	/** 
@@ -140,7 +140,7 @@ class Concrete5_Model_CollectionAttributeKey extends AttributeKey {
 
 		CacheLocal::delete('collection_attribute_key_by_handle', $args['akHandle']);
 
-		$ak = parent::add('collection', $at, $args, $pkg);
+		$ak = parent::addBase('collection', $at, $args, $pkg);
 		return $ak;
 	}
 	

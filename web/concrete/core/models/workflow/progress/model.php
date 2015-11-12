@@ -83,7 +83,7 @@ abstract class Concrete5_Model_WorkflowProgress extends Object {
 	/** 
 	 * Creates a WorkflowProgress object (which will be assigned to a Page, File, etc... in our system.
 	 */
-	public static function add($wpCategoryHandle, Workflow $wf, WorkflowRequest $wr) {
+	public static function addBase($wpCategoryHandle, Workflow $wf, WorkflowRequest $wr) {
 		$db = Loader::db();
 		$wpDateAdded = Loader::helper('date')->getLocalDateTime();
 		$wpCategoryID = $db->GetOne('select wpCategoryID from WorkflowProgressCategories where wpCategoryHandle = ?', array($wpCategoryHandle));

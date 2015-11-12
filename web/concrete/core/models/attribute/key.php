@@ -122,7 +122,7 @@ class Concrete5_Model_AttributeKey extends Object {
 	/** 
 	 * Returns a list of all attributes of this category
 	 */
-	public static function getList($akCategoryHandle, $filters = array()) {
+	public static function getBaseList($akCategoryHandle, $filters = array()) {
 		$db = Loader::db();
 		$pkgHandle = $db->GetOne('select pkgHandle from AttributeKeyCategories inner join Packages on Packages.pkgID = AttributeKeyCategories.pkgID where akCategoryHandle = ?', array($akCategoryHandle));
 		$q = 'SELECT k.akID, s.asID, s.asDisplayOrder, sk.displayOrder'
@@ -240,7 +240,7 @@ class Concrete5_Model_AttributeKey extends Object {
 	/** 
 	 * Adds an attribute key. 
 	 */
-	protected function add($akCategoryHandle, $type, $args, $pkg = false) {
+	protected function addBase($akCategoryHandle, $type, $args, $pkg = false) {
 		
 		$vn = Loader::helper('validation/numbers');
 		$txt = Loader::helper('text');

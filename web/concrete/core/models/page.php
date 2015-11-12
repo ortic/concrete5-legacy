@@ -435,7 +435,7 @@ class Concrete5_Model_Page extends Collection {
 		$data['handle'] = $this->getCollectionHandle();
 		$data['name'] = $this->getCollectionName();
 		
-		$cobj = parent::add($data);
+		$cobj = parent::addCollection($data);
 		$newCID = $cobj->getCollectionID();
 		
 		$v = array($newCID, $cParentID, $uID, $this->getCollectionID(), $cDisplayOrder);
@@ -1576,7 +1576,7 @@ class Concrete5_Model_Page extends Collection {
 			}
 		}
 		
-		$newC = $cobj->duplicate();
+		$newC = $cobj->duplicateCollection();
 		$newCID = $newC->getCollectionID();
 		
 		$v = array($newCID, $cParentID, $uID, $this->overrideTemplatePermissions(), $this->getPermissionsCollectionID(), $this->getCollectionInheritance(), $this->cFilename, $this->cPointerID, $this->cPointerExternalLink, $this->cPointerExternalLinkNewWindow, $this->cDisplayOrder, $this->pkgID, $this->cCacheFullPageContent, $this->cCacheFullPageContentOverrideLifetime, $this->cCacheFullPageContentLifetimeCustom);

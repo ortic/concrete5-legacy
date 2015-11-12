@@ -874,7 +874,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 			return Block::getByID($nb->getBlockID(), $this, $a);
 		}
 		
-		public function add($data) {
+		public function addCollection($data) {
 			$db = Loader::db();
 			$dh = Loader::helper('date');
 			$cDate = $dh->getSystemDateTime(); 
@@ -958,7 +958,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 			}
 		}
 		
-		public function duplicate() {
+		public function duplicateCollection() {
 			$db = Loader::db();
 			$dh = Loader::helper('date');
 			$cDate = $dh->getSystemDateTime();
